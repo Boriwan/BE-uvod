@@ -1,0 +1,100 @@
+[{
+  "awid": "22222222222222222222222222222222",
+  "name": "nadšený",
+  "category": [{ "$oid": "6540c5f4b250c6ebde465395" }, { "$oid": "6540c5f4b250c6ebde465398" }, { "$oid": "6540c5f4b250c6ebde465397" }],
+  "text": "Vítejte",
+  "state": "active",
+  "owner": "822-5205-4105-0000",
+  "history": [
+    {
+    "name": "nadsený",
+    "category": [{ "$oid": "6540c5f4b250c6ebde465395" }, { "$oid": "6540c5f4b250c6ebde465398" }, { "$oid": "6540c5f4b250c6ebde465397" }],
+    "text": "Výtejte",
+    "state": "construct",
+    "sys": { "cts": "2023-10-06T10:06:56.812Z", "mts": "2023-10-06T14:30:07.304Z", "rev": 0 }
+  },{
+    "awid": "22222222222222222222222222222222",
+    "name": "nadšený",
+    "category": [{ "$oid": "6540c5f4b250c6ebde465395" }, { "$oid": "6540c5f4b250c6ebde465398" }, { "$oid": "6540c5f4b250c6ebde465397" }],
+    "text": "Výtejte",
+    "state": "construct",
+    "sys": { "cts": "2023-10-06T10:06:56.812Z", "mts": "2023-10-06T16:30:07.304Z", "rev": 1 }
+  },{
+    "awid": "22222222222222222222222222222222",
+    "name": "nadšený",
+    "category": [{ "$oid": "6540c5f4b250c6ebde465395" }, { "$oid": "6540c5f4b250c6ebde465398" }, { "$oid": "6540c5f4b250c6ebde465397" }],
+    "text": "Vítejte",
+    "state": "construct",
+    "sys": { "cts": "2023-10-06T10:06:56.812Z", "mts": "2023-10-10T14:30:07.304Z", "rev": 2 }
+  }],
+  "sys": { "cts": "2023-10-06T10:06:56.812Z", "mts": "2023-11-09T14:30:07.304Z", "rev": 3 }
+},{
+  "awid": "22222222222222222222222222222222",
+  "name": "rezervovaný",
+  "category": [{ "$oid": "6540c5f4b250c6ebde465395" }, { "$oid": "6540c5f4b250c6ebde465398" }, { "$oid": "6540c5f4b250c6ebde465397" }],
+  "text": "Zdravím",
+  "state": "active",
+  "owner": "822-5205-4105-0000",
+  "history": [
+    {
+    "name": "rezervovaný",
+    "category": [{ "$oid": "6540c5f4b250c6ebde465395" }, { "$oid": "6540c5f4b250c6ebde465398" }, { "$oid": "6540c5f4b250c6ebde465397" }],
+    "text": "Zdravím",
+    "state": "construct",
+    "sys": { "cts": "2023-10-06T10:06:56.812Z", "mts": "2023-10-06T14:30:07.304Z", "rev": 0 }
+  }],
+  "sys": { "cts": "2023-10-06T10:06:56.812Z", "mts": "2023-11-09T14:30:07.304Z", "rev": 1 }
+},{
+  "awid": "22222222222222222222222222222222",
+  "name": "cvičitel",
+  "category": [{ "$oid": "6540c5f4b250c6ebde465398" }],
+  "text": "Na zdar",
+  "state": "active",
+  "owner": "822-5205-4105-0000",
+  "history": [
+    {
+    "name": "cvičební",
+    "category": [{ "$oid": "6540c5f4b250c6ebde465398" }],
+    "text": "Na zdar",
+    "state": "construct",
+    "sys": { "cts": "2023-10-06T10:06:56.812Z", "mts": "2023-10-06T14:30:07.304Z", "rev": 0 }
+  },{
+    "name": "cvičitel",
+    "category": [{ "$oid": "6540c5f4b250c6ebde465398" }],
+    "text": "Na zdar",
+    "state": "construct",
+    "sys": { "cts": "2023-10-06T10:06:56.812Z", "mts": "2023-11-04T14:30:07.304Z", "rev": 1 }
+  }],
+  "sys": { "cts": "2023-10-06T10:06:56.812Z", "mts": "2023-11-09T14:30:07.304Z", "rev": 2 }
+},{
+  "awid": "22222222222222222222222222222222",
+  "name": "učitelský",
+  "category": [{ "$oid": "6540c5f4b250c6ebde465398" }, { "$oid": "6540c5f4b250c6ebde465395" }],
+  "text": "Výtám Vás na dnešní přednášce",
+  "state": "construct",
+  "owner": "822-5205-4105-0000",
+  "history": [{}],  
+  "sys": { "cts": "2023-10-06T10:06:56.812Z", "mts": "2023-10-06T10:06:56.812Z", "rev": 0 }
+},{
+  "awid": "22222222222222222222222222222222",
+  "name": "výchozí",
+  "category": [{ "$oid": "6540c5f4b250c6ebde465395" }, { "$oid": "6540c5f4b250c6ebde465398" }, { "$oid": "6540c5f4b250c6ebde465397" }],
+  "text": "Ahoj světe",
+  "state": "archive",
+  "owner": "822-5205-4105-0000",
+  "history": [
+    {
+    "name": "výchozí",
+    "category": [{ "$oid": "6540c5f4b250c6ebde465395" }, { "$oid": "6540c5f4b250c6ebde465398" }, { "$oid": "6540c5f4b250c6ebde465397" }],
+    "text": "Ahoj světe",
+    "state": "construct",
+    "sys": { "cts": "2023-10-06T10:06:56.812Z", "mts": "2023-10-06T14:30:07.304Z", "rev": 0 }
+  },{
+    "name": "výchozí",
+    "category": [{ "$oid": "6540c5f4b250c6ebde465395" }, { "$oid": "6540c5f4b250c6ebde465398" }, { "$oid": "6540c5f4b250c6ebde465397" }],
+    "text": "Ahoj světe",
+    "state": "active",
+    "sys": { "cts": "2023-10-06T10:06:56.812Z", "mts": "2023-10-06T16:30:07.304Z", "rev": 1 }
+  }],
+  "sys": { "cts": "2023-10-06T10:06:56.812Z", "mts": "2023-10-09T14:30:07.304Z", "rev": 2 }
+}]

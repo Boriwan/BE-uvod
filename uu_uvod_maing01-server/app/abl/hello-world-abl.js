@@ -2,6 +2,8 @@
 const { Validator } = require("uu_appg01_server").Validation;
 const { ValidationHelper } = require("uu_appg01_server").AppServer;
 const Errors = require("../api/errors/helloworld-error.js");
+const { Schemas, Profiles } = require("../constants.js");
+const { DaoFactory, ObjectStoreError } = require("uu_appg01_server").ObjectStore;
 
 const WARNINGS = {
   greetingUnsupportedKeys: {
@@ -12,6 +14,7 @@ const WARNINGS = {
 class HelloWorldAbl {
   constructor() {
     this.validator = Validator.load();
+    this.dao = DaoFactory.getDao(Schemas.GREET);
   }
 
   greeting(userName, dtoIn) {
@@ -32,6 +35,28 @@ class HelloWorldAbl {
     return {
       messageA: message,
       dtoIn,
+      uuAppErrorMap,
+    };
+  }
+
+  async greetList(awid, dtoIn, authorizationResult) {
+    // HDS 1
+    let validationResult = this.validator.validate("helloWorldGreetListDtoInType", dtoIn);
+    // A1, A2
+    let uuAppErrorMap = ValidationHelper.processValidationResult(
+      dtoIn,
+      validationResult,
+      WARNINGS.greetingUnsupportedKeys.code,
+      Errors.Greeting.InvalidDtoIn
+    );
+
+    let profiles = authorizationResult.getAuthorizedProfiles();
+
+    let greetList = await this.dao.list(awid);
+
+    return {
+      profiles,
+      ...greetList,
       uuAppErrorMap,
     };
   }

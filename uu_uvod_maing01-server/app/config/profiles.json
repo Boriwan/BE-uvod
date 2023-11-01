@@ -10,6 +10,10 @@
         "sysStateList": ["created", "assigned", "active"],
         "profileList": ["Public", "AwidLicenseOwner"]
       },
+      "helloworld/greetList": {
+        "sysStateList": ["active"],
+        "profileList": ["Public", "AwidLicenseOwner", "Authorities", "Executives"]
+      },
       "sys/uuAppWorkspace/init": {
         "sysStateList": ["created", "assigned"],
         "profileList": ["AwidLicenseOwner", "AwidInitiator"]

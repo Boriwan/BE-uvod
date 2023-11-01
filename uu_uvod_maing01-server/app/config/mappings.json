@@ -6,6 +6,11 @@
         "httpMethod": "GET",
         "type": "CMD"
       },
+      "helloworld/greetList": {
+        "realization": "api/controllers/HelloWorldController.greetList",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
       "sys/uuAppWorkspace/init": {
         "realization": "api/controllers/UvodMainController.init",
         "httpMethod": "POST",
