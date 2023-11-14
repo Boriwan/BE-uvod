@@ -6,3 +6,9 @@ const helloWorldGreetingDtoInType = shape({
 });
 
 const helloWorldGreetListDtoInType = shape({});
+
+const helloWorldGreetCreateDtoInType = shape({
+  name: string().isRequired(),
+  category: array(id()),
+  text: string().isRequired(),
+});

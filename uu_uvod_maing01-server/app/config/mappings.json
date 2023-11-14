@@ -11,6 +11,11 @@
         "httpMethod": "GET",
         "type": "CMD"
       },
+      "helloworld/greetCreate": {
+        "realization": "api/controllers/HelloWorldController.greetCreate",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
       "sys/uuAppWorkspace/init": {
         "realization": "api/controllers/UvodMainController.init",
         "httpMethod": "POST",

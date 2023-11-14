@@ -7,6 +7,10 @@ class GreetMongo extends UuObjectDao {
     await super.createIndex({ awid: 1, name: 1 });
   }
 
+  async create(uuObject) {
+    return await super.insertOne(uuObject);
+  }
+
   async list(awid) {
     let filter = { awid };
     return await super.find(filter);
