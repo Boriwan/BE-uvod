@@ -5,12 +5,17 @@ const Errors = require("../api/errors/helloworld-error.js");
 const { Schemas, Profiles } = require("../constants.js");
 const { DaoFactory, ObjectStoreError } = require("uu_appg01_server").ObjectStore;
 const { GreetStates } = require("../constants.js");
+const { LoggerFactory } = require("uu_appg01_server").Logging;
+const { UriBuilder } = require("uu_appg01_server").Uri;
+const AppClient = require("uu_appg01_server").AppClient;
 
 const WARNINGS = {
   greetingUnsupportedKeys: {
     code: `${Errors.Greeting.UC_CODE}unsupportedKeys`,
   },
 };
+
+const logger = LoggerFactory.get("helloworld.Abls.HelloWorldAbl");
 
 class HelloWorldAbl {
   constructor() {
@@ -19,7 +24,11 @@ class HelloWorldAbl {
     this.daoCategory = DaoFactory.getDao(Schemas.CATEGORY);
   }
 
-  greeting(userName, dtoIn) {
+  async greeting(userName, dtoIn, session) {
+    //logger
+    logger.debug("ABL - greeting - debug: " + userName);
+    logger.warn("ABL - greeting - warning: " + userName);
+
     // HDS 1
     let validationResult = this.validator.validate("helloWorldGreetingDtoInType", dtoIn);
     // A1, A2
@@ -34,9 +43,29 @@ class HelloWorldAbl {
     if (dtoIn.sufix) {
       message += " " + dtoIn.sufix;
     }
+
+    const uuIdmBaseUri = "https://uuapp-dev.plus4u.net/uu-identitymanagement-maing01/58ceb15c275c4b31bfe0fc9768aa6a9c";
+    const uuIdmPersonIdentityLoadUri = UriBuilder.parse(uuIdmBaseUri).setUseCase("uuPersonIdentity/load");
+    const personIdentityLoadDtoIn = {
+      uuIdentity: session.getIdentity().getUuIdentity(),
+    };
+    logger.debug(JSON.stringify(session.getIdentity().getUuIdentity()));
+    let personIdentityLoadDtoOut;
+    try {
+      personIdentityLoadDtoOut = await AppClient.cmdGet(uuIdmPersonIdentityLoadUri, personIdentityLoadDtoIn, {
+        session,
+      });
+    } catch (e) {
+      // throw new Errors.CreateOnBehalf.CallIdmFailed({ uuAppErrorMap }, e);
+      throw e;
+    }
+    const type = personIdentityLoadDtoOut.type;
+
     return {
       messageA: message,
       dtoIn,
+      type: type,
+      personIdentityLoadDtoOut,
       uuAppErrorMap,
     };
   }

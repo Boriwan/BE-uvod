@@ -9,7 +9,7 @@ const Constants = {
   GreetStates: {
     CONSTRUCT: "construct",
     ACTIVE: "active",
-    "DELETED": "deleted",
+    DELETED: "deleted",
   },
   Profiles: {
     AUTHORITIES: "Authorities",
